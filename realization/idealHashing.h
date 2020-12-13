@@ -6,14 +6,14 @@ template<typename T, typename D, typename H>
 class IdealHashing {
 public:
     vector<D> hashTable;
-    bitset<25000000> hashTableUsed;
+    vector<bool> hashTableUsed;
     H hashFunction;
     int attempts = 0;
-    int limit = 1000;
+    int limit = 200;
     bool success = true;
     int hashTableSize;
 
-    explicit IdealHashing(vector<pair<T, D>> data, int hashTableSize = 1) {
+    IdealHashing(vector<pair<T, D>> data, int hashTableSize) {
         this->hashTableSize = hashTableSize;
         hashFunction = H(hashTableSize);
         hashTable.resize(hashTableSize);
@@ -26,9 +26,12 @@ public:
         }
     }
 
+    explicit IdealHashing(vector<pair<T, D>> data) : IdealHashing(data, data.size() * data.size()){}
+
     bool hashing(vector<pair<T, D>> & data) {
         hashFunction.generateHashingFunction();
-        hashTableUsed = 0;
+        hashTableUsed.clear();
+        hashTableUsed.resize(hashTableSize);
 
         for (auto item : data) {
             auto itemHash = hashFunction.hashing(item.first);
@@ -56,11 +59,13 @@ public:
     vector<IdealHashing<T, D, H>> hashTable;
     H hashFunction;
     bool success = true;
-    int p;
+    int hashTableSize;
 
-    explicit IdealHashingAdvanced(vector<pair<T, D>> data, int p = 1) {
-        this->p = p;
-        hashFunction = H(p * data.size());
+    explicit IdealHashingAdvanced(vector<pair<T, D>> data) : IdealHashingAdvanced(data, data.size()) {}
+
+    IdealHashingAdvanced(vector<pair<T, D>> data, int hashTableSize) {
+        this->hashTableSize = hashTableSize;
+        hashFunction = H(hashTableSize);
         hashing(data);
     }
 
@@ -69,7 +74,7 @@ public:
         hashFunction.generateHashingFunction();
         hashTable.clear();
 
-        vector<vector<pair<T, D>>> firstStep(p * data.size());
+        vector<vector<pair<T, D>>> firstStep(hashTableSize);
 
         for (auto item : data){
             auto itemHash = hashFunction.hashing(item.first);
@@ -80,6 +85,7 @@ public:
             hashTable.push_back(IdealHashing<T, D, H>(firstStep[i]));
             if (!hashTable.back().success) {
                 success = false;
+                return;
             }
         }
 

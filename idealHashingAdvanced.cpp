@@ -15,7 +15,7 @@ result hashing(vector<pair<T, D>> &v, int p = 1) {
     process_mem_usage(vm, rss);
 
     auto timeHashingBegin = chrono::system_clock::now();
-    auto idealHashing = new IdealHashing<T, D, H>(v, p * v.size() * v.size());
+    auto idealHashing = new IdealHashingAdvanced<T, D, H>(v, p * v.size());
     double hashingTime = (double)chrono::duration_cast<std::chrono::microseconds>(chrono::system_clock::now() - timeHashingBegin).count();
 
     double vm2, rss2;
@@ -29,7 +29,7 @@ result hashing(vector<pair<T, D>> &v, int p = 1) {
     auto averageSearchTimeBegin = chrono::system_clock::now();
     for (auto i : v) {
         if (idealHashing->search(i.first) != i.second) {
-           processedSuccessful = false;
+            processedSuccessful = false;
         }
     }
     double averageSearchTime = (double)chrono::duration_cast<std::chrono::microseconds>(chrono::system_clock::now() - averageSearchTimeBegin).count()/v.size();
@@ -76,14 +76,13 @@ void measure(vector<pair<T, int>> (*generateFunction)(long long), ofstream & out
 
 signed main() {
 
-    ofstream intOut("../results/idealHashing/intOut");
+//    ofstream intOut("../results/idealHashingAdvanced/intOut");
+//
+//    measure<int>(generateVectorInt, intOut);
+//
+//    intOut.close();
 
-    measure<int>(generateVectorInt, intOut);
-
-    intOut.close();
-
-
-    ofstream stringOut("../results/idealHashing/stringOut");
+    ofstream stringOut("../results/idealHashingAdvanced/stringOut");
 
     measure<string>(generateVectorString, stringOut);
 

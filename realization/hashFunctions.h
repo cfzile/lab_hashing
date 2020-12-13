@@ -15,7 +15,7 @@ class HashFunctionType1 : public HashFunction<T> {
 public:
     int a, b, p, n;
 
-    HashFunctionType1() {}
+    explicit HashFunctionType1() {}
 
     explicit HashFunctionType1(int n) {
         this->n = n;
@@ -24,7 +24,7 @@ public:
 
     void generateHashingFunction(){
         p = primes[generateInteger(0, primes.size() - 1)];
-        a = generateInteger(0, p - 1);
+        a = generateInteger(1, p - 1);
         b = generateInteger(0, p - 1);
     }
 
@@ -37,7 +37,7 @@ public:
         int num = 0;
         for (auto i : item) {
             int g = max(0ll, (int)i);
-            hash = (hash * a + g) % n;
+            hash = (hash * a + g) % p;
             num += 1;
         }
         return hash % n;

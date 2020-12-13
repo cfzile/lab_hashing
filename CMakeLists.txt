@@ -3,4 +3,5 @@ project(lab_g)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(lab_g idealHashing.cpp hashFunctions.h general.h idealHashing.h graphHashing.h)
+add_executable(idealHashing idealHashing.cpp)
+add_executable(idealHashingAdvanced idealHashingAdvanced.cpp)
