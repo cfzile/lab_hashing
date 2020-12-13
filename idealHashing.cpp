@@ -52,12 +52,11 @@ void measure(vector<pair<T, int>> (*generateFunction)(long long), ofstream & out
 
             vector<pair<T, int>> v = generateFunction(size);
             for (int attempt = 0; attempt < attemptsNum; attempt += 1) {
-                result res = hashing<T, int, HashFunctionType1<T>>(v, p);
+                result res = hashing<T, int, HashFunctionType1<T>>(v, p * v.size() * v.size());
                 hashingTime += res.hashingTime;
                 averageSearchTime += res.averageSearchTime;
                 processedMemory += res.processedMemory;
                 processedSuccessful = processedSuccessful && res.processedSuccessful;
-                cout << res.processedSuccessful;
             }
             hashingTime /= attemptsNum;
             averageSearchTime /= attemptsNum;
@@ -78,11 +77,11 @@ void measure(vector<pair<T, int>> (*generateFunction)(long long), ofstream & out
 signed main() {
 
 
-//    ofstream intOut("../results/idealHashing/intOut");
-//
-//    measure<int>(generateVectorInt, intOut);
-//
-//    intOut.close();
+    ofstream intOut("../results/idealHashing/intOut");
+
+    measure<int>(generateVectorInt, intOut);
+
+    intOut.close();
 
 
     ofstream stringOut("../results/idealHashing/stringOut");

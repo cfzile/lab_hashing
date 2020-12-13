@@ -13,8 +13,7 @@ public:
 template<typename T>
 class HashFunctionType1 : public HashFunction<T> {
 public:
-    vector<int> a;
-    int b, p, n;
+    int a, b, p, n;
 
     HashFunctionType1() {}
 
@@ -25,26 +24,23 @@ public:
 
     void generateHashingFunction(){
         p = primes[generateInteger(0, primes.size() - 1)];
-        a = generateVectorInteger(20, 1, p - 1);
+        a = generateInteger(0, p - 1);
         b = generateInteger(0, p - 1);
     }
 
     int hashing(int item) {
-        return ((a[0] * item + b) % p) % n;
+        return ((a * (hash<T>{}(item) % p) + b) % p) % n;
     }
 
     int hashing(string item) {
         int hash = 5381;
         int num = 0;
-//        int A = a[0];
         for (auto i : item) {
-            hash = ((hash * (a[i] % p)) + (int)i) % p;
+            int g = max(0ll, (int)i);
+            hash = (hash * a + g) % n;
             num += 1;
-//            A = (1 * a[0]) % n;
         }
-//        cout << item << " " << hash << "\n";
         return hash % n;
-//        return ((hash * a[1] + b) % p) % n;
     }
 };
 

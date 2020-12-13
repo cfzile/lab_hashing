@@ -9,15 +9,14 @@ public:
     bitset<25000000> hashTableUsed;
     H hashFunction;
     int attempts = 0;
-    int limit = 200;
+    int limit = 1000;
     bool success = true;
-    int p;
+    int hashTableSize;
 
-    explicit IdealHashing(vector<pair<T, D>> data, int p = 1) {
-        this->p = p;
-        int n = data.size();
-        hashFunction = H(p * n * n);
-        hashTable.resize(p * n * n);
+    explicit IdealHashing(vector<pair<T, D>> data, int hashTableSize = 1) {
+        this->hashTableSize = hashTableSize;
+        hashFunction = H(hashTableSize);
+        hashTable.resize(hashTableSize);
         while (!hashing(data)) {
             attempts += 1;
             if (attempts > limit){
@@ -33,8 +32,9 @@ public:
 
         for (auto item : data) {
             auto itemHash = hashFunction.hashing(item.first);
-            if (hashTableUsed[itemHash])
+            if (hashTableUsed[itemHash]) {
                 return false;
+            }
             hashTableUsed[itemHash] = true;
             hashTable[itemHash] = item.second;
         }

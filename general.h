@@ -10,7 +10,7 @@ int inf = 2000000000;
 
 using namespace std;
 
-vector<int> primes = {96873151,49782769,25556317,32287093,84180703,29502881,60573089,41091107,19289551,28036597};
+vector<int> primes = {587617,96873151,49782769,25556317,32287093,84180703,29502881,60573089,41091107,19289551,28036597};
 random_device rd;
 mt19937 mt(rd());
 
@@ -42,17 +42,18 @@ vector<pair<int, int>> generateVectorInt(int size) {
 
 vector<pair<string, int>> generateVectorString(int size) {
     vector<pair<string, int>> result;
+    set<string> keys;
     for (int i = 0; i < size; i++) {
-        int string_size = generateInteger(0, 20);
-        set<string> keys;
         string str = "";
         do {
+            int string_size = generateInteger(0, 20) + 1;
             str = "";
             for (int j = 0; j < string_size; j++) {
-                str += (char) generateInteger(0, 127);
+                str += (char) generateInteger(65, 127);
             }
         }while(keys.find(str) != keys.end());
         result.emplace_back(str, generateInteger(0, inf));
+        keys.insert(str);
     }
     return result;
 }
