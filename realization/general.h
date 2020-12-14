@@ -1,4 +1,5 @@
 #pragma once
+
 #include <bits/stdc++.h>
 #include <sys/resource.h>
 #include <unistd.h>
@@ -123,11 +124,11 @@ result hashing(vector<pair<T, D>> &v, int p = 1) {
 template<typename T, typename C>
 void measure(vector<pair<T, int>> (*generateFunction)(long long),
              ofstream & out,
-             vector<int> sizes = {100, 500, 1000, 5000}) {
+             vector<int> sizes = {100, 500, 1000, 2000, 5000, 8000, 10000}) {
 
     int attemptsNum = 5;
 
-    out << "p; size; avg_hashingTime; avg_averageSearchTime; avg_processedMemory\n";
+    out << "p;size;hashing time;average search time;processed memory\n";
 
     for (int p = 1; p <= 4; p += 1) {
         for (auto size : sizes) {
