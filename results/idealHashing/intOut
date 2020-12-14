@@ -1,0 +1,16 @@
+p=1 size=100 avg_hashingTime=64 avg_averageSearchTime=0.03 avg_processedMemory=96
+p=1 size=500 avg_hashingTime=1124.4 avg_averageSearchTime=0.048 avg_processedMemory=1984.8
+p=1 size=1000 avg_hashingTime=4659.8 avg_averageSearchTime=0.056 avg_processedMemory=7947.2
+p=1 size=5000 avg_hashingTime=98206 avg_averageSearchTime=0.0704 avg_processedMemory=198368
+p=2 size=100 avg_hashingTime=83.4 avg_averageSearchTime=0.03 avg_processedMemory=160
+p=2 size=500 avg_hashingTime=1845 avg_averageSearchTime=0.046 avg_processedMemory=3969.6
+p=2 size=1000 avg_hashingTime=7360 avg_averageSearchTime=0.0388 avg_processedMemory=15876
+p=2 size=5000 avg_hashingTime=181382 avg_averageSearchTime=0.0506 avg_processedMemory=396732
+p=3 size=100 avg_hashingTime=119.6 avg_averageSearchTime=0.03 avg_processedMemory=236
+p=3 size=500 avg_hashingTime=2696.6 avg_averageSearchTime=0.034 avg_processedMemory=5937.6
+p=3 size=1000 avg_hashingTime=10757.4 avg_averageSearchTime=0.039 avg_processedMemory=23808
+p=3 size=5000 avg_hashingTime=266218 avg_averageSearchTime=0.07016 avg_processedMemory=595096
+p=4 size=100 avg_hashingTime=155 avg_averageSearchTime=0.03 avg_processedMemory=316
+p=4 size=500 avg_hashingTime=3569 avg_averageSearchTime=0.0344 avg_processedMemory=7920
+p=4 size=1000 avg_hashingTime=14229.6 avg_averageSearchTime=0.0394 avg_processedMemory=31744
+p=4 size=5000 avg_hashingTime=370778 avg_averageSearchTime=0.06796 avg_processedMemory=793460
