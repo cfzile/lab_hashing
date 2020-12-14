@@ -1,6 +1,6 @@
 #pragma once
 #include "general.h"
-
+#include "hashFunctions.h"
 
 template<typename T, typename D, typename H>
 class GraphHashing {
@@ -12,8 +12,8 @@ public:
     bool success = true;
     H f1, f2;
 
-    explicit GraphHashing(vector<pair<T, D>> data, int g_size = 587617) {
-        this->g_size = g_size;
+    explicit GraphHashing(vector<pair<T, D>> data, int p = 1) {
+        this->g_size = data.size() * p;
         f1 = H(g_size);
         f2 = H(g_size);
         while (!hashing(data)) {
