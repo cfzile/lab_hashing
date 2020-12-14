@@ -8,16 +8,20 @@ public:
     vector<vector<pair<int, int>>> edges;
     vector<pair<T, D>> saveData;
     vector<int> g;
-    int attempts = 0;
+    int attempts = 0, limits = 300, g_size = 587617;
+    bool success = true;
     H f1, f2;
-    int g_size = 5;
 
-    explicit GraphHashing(vector<pair<T, D>> data) {
-        g_size = 587617;
+    explicit GraphHashing(vector<pair<T, D>> data, int g_size = 587617) {
+        this->g_size = g_size;
         f1 = H(g_size);
         f2 = H(g_size);
         while (!hashing(data)) {
             attempts += 1;
+            if (attempts > limits){
+                success = false;
+                break;
+            }
         }
     }
 
