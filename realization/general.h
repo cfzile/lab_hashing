@@ -12,8 +12,9 @@ int inf = 20000000;
 using namespace std;
 
 vector<int> primes = {4294967295, 587617, 96873151, 49782769, 25556317, 32287093, 84180703, 29502881, 60573089, 41091107, 19289551,
+                      6114391, 9899173, 41257409, 5331379, 23706707, 98863543, 5092069, 74843921, 24824197, 52168027, 437321,
+                      96505763, 264959, 5917883, 900917, 22072411, 22146139, 848921, 3848017, 297533, 862819, 28036597};
 
-                      28036597};
 random_device rd;
 mt19937 mt(rd());
 
@@ -61,6 +62,49 @@ vector<pair<string, int>> generateVectorString(int size) {
     return result;
 }
 
+vector<pair<string, int>> realData;
+
+void readRealData() {
+    ifstream text1("../realdata/text1.txt");
+    ifstream text2("../realdata/text2.txt");
+    ifstream text3("../realdata/text3.txt");
+    set<string> keys;
+    string s;
+    int num = 0;
+    while (text1 >> s) {
+        if (keys.find(s) != keys.end() || s.size() == 0)
+            continue;
+        realData.push_back({s, num++});
+        keys.insert(s);
+    }
+    while (text2 >> s) {
+        if (keys.find(s) != keys.end() || s.size() == 0)
+            continue;
+        realData.push_back({s, num++});
+        keys.insert(s);
+    }
+    while (text3 >> s) {
+        if (keys.find(s) != keys.end() || s.size() == 0)
+            continue;
+        realData.push_back({s, num++});
+        keys.insert(s);
+    }
+    text1.close();
+    text2.close();
+    text3.close();
+}
+
+vector<pair<string, int>> getRealData(int size) {
+    decltype(realData) data;
+    for (auto i : realData){
+        if (!size)
+            break;
+        data.push_back(i);
+        size -= 1;
+    }
+    return data;
+}
+
 void process_mem_usage(double &vm_usage, double &resident_set) {
     vm_usage = 0.0;
     resident_set = 0.0;
@@ -77,7 +121,7 @@ void process_mem_usage(double &vm_usage, double &resident_set) {
     }
 
     long page_size_kb = sysconf(_SC_PAGE_SIZE) / 1024; // in case x86-64 is configured to use 2MB pages
-    vm_usage = vsize / 1024.; // Mбайт
+    vm_usage = vsize / 1024.; // Кбайт
     resident_set = rss * page_size_kb;
 }
 
@@ -130,7 +174,7 @@ void measure(vector<pair<T, int>> (*generateFunction)(long long),
 
     int attemptsNum = 5;
 
-    out << "p;size;hashing time;average search time;processed memory;number attempts\n";
+    out << "p;size;hashing time(microseconds/10^-6 sec);average search time(microseconds/10^-6 sec);processed memory(KB);average number attempts\n";
 
     for (int p = 1; p <= 4; p += 1) {
         for (auto size : sizes) {

@@ -3,19 +3,21 @@
 #include "general.h"
 #include "hashFunctions.h"
 
-template<typename T, typename D, typename H, int n = 1000000>
+template<typename T, typename D, typename H>
 class IdealHashing {
 public:
     vector<D> hashTable;
-    bitset<n> hashTableUsed;
+    vector<int> hashTableUsed;
     H hashFunction;
     int attempts = 0, limit = 200, hashTableSize;
+    int t = 0;
     bool success = true;
 
     IdealHashing(vector<pair<T, D>> data, int p = 1) {
         hashTableSize = p * (int)data.size() * (int)data.size();
         hashFunction = H(hashTableSize);
         hashTable = vector<D>(hashTableSize);
+        hashTableUsed = vector<int>(hashTableUsed);
         while (!hashing(data)) {
             attempts += 1;
             if (attempts > limit) {
@@ -26,22 +28,22 @@ public:
     }
 
     bool hashing(vector<pair<T, D>> &data) {
-        hashTableUsed = 0;
+        t += 1;
         hashFunction.generateHashingFunction();
 
         for (auto item : data) {
             auto itemHash = hashFunction.hashing(item.first);
-            if (hashTableUsed[itemHash]) {
+            if (hashTableUsed[itemHash] == t) {
                 return false;
             }
-            hashTableUsed[itemHash] = 1;
+            hashTableUsed[itemHash] = t;
             hashTable[itemHash] = item.second;
         }
         return true;
     }
 
     bool exist(T item) {
-        return hashTableUsed[hashFunction.hashing(item)];
+        return hashTableUsed[hashFunction.hashing(item)] == t;
     }
 
     D search(T item) {

@@ -41,7 +41,7 @@ public:
     int hashing(string item) {
         int hash = 5381;
         for (auto i : item) {
-            int g = (int) i;
+            int g = (int) i + 300;
             hash = (multiply(hash, a, p) + g + p) % p;
         }
         return hash % n;
@@ -74,7 +74,7 @@ public:
         auto hash = 0;
         int num = 0;
         for (auto i : item) {
-            int g = (int) i;
+            int g = (int) i + 300;
             hash = (hash + g * table[num]) % n;
             num += 1;
         }

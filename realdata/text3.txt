@@ -1,0 +1,526 @@
+Romeo and Juliet is one of a group of lyrical plays usually dated at 1594-95. The earliest date that has been proposed for first performance of Romeo and Juliet is 1591. The play might have begun in about 1591, then laid aside, and only completed a year or two later. The allusions to Daniel and Eliot indicate 1953 as the earliest possible date for Romeo and Juliet, the Bad Quatro makes 1596 the latest. The tragedy of Romeo and Juliet was almost certainly first performed by Shakespeare's company - the Chamberlain's Men - in or around 1596, most likely in the Burbage's Theatre (it may be then on stage in the Curtain theatre where the company performed in 1597). It has been suggested that Richard Burbage (1568-1619), the company's leading man, took the role of Romeo (he would then have been about 28) and that Juliet was taken by Master Robert Gough, or Goffe (d. 1624), who seems to have been allocated leading female roles in Shakespeare's earlier plays. The famous clown William Kemp (d. 1603) probably played the part of Peter. The text of the play is complex. It first appeared in print in the short (Bad) Quatro of 1597 with the following title-page: " AN EXCELLENT conceited Tragedie of Romeo anf Juliet,  As it hath been often (with great applause) plaid publiquely , by the right Honourable the L. of Hunsdon his Seruants. LONDON, Printed by Iohn Danter. 1597." This text, though traditionally maligned as an "unauthoritative" memorial reconstruction of the play by actors in the company, derived from a version adapted for acting - stage directions probably record details of the first staging of the play. The text contains anticipations, recollections, transpositions, paraphrases, summaries, repetitions and omissions of words, phrases or lines correctly presented in the next edition. The First Quatro (Q1), piratical and dependent on an especially unreliable means of transmission for the text, was succeeded by a second (Good) version. This Second Quatro (Q2) appeared two years later, evidently intended to supplant the Bad Quatro. Its title page reads: " THE MOST EXCELLENT AND LAMENTABLE Tragedie of Romeo and Juliet. Newly corrected, augmented, and amended: As it hath bene sundry times publiquely acted, by the right Honourable the Lord Chamberlaine his Seruants. LONDON. Printed by Thomas Creede, for Cuthbert Burby, and are to be sold at his shop neare the Exchange. 1599." This statement means that Q2 is a replacement of the first edition, not a revision of an earlier version of the play. Q2 is one-third as long again as the first, and traditionally assumed to have been derived in large part from Shakespeare's "foul papers"or original draft of the play. All subsequent early editions - including the version that appares in the 1623 First Folio of Shakespeare's plays - derive more or less directly from Q2, which is also the basis of all modern editions of the play.
+Enter SAMSON and GREGORY, of the house of Capulet, with swords and bucklers.
+
+
+
+Samp. Gregory, on my word, we'll not carry coals.
+
+Greg. No, for then we should be colliers.
+
+Samp. I mean, an we be in choler, we'll draw.
+
+Greg. Ay, while you live, draw your neck out of collar.
+
+Samp. I strike quickly, being moved.
+
+Greg. But thou art not quickly moved to strike.
+
+Samp. A dog of the house of Montague moves me.
+
+Greg. To move is to stir, and to be valiant is to stand.
+
+Therefore, if thou art moved, thou runn'st away.
+
+Samp. A dog of that house shall move me to stand. I will take the
+
+wall of any man or maid of Montague's.
+
+Greg. That shows thee a weak slave; for the weakest goes to the
+
+wall.
+
+Samp. 'Tis true; and therefore women, being the weaker vessels, are
+
+ever thrust to the wall. Therefore I will push Montague's men
+
+from the wall and thrust his maids to the wall.
+
+Greg. The quarrel is between our masters and us their men.
+
+Samp. 'Tis all one. I will show myself a tyrant. When I have fought
+
+with the men, I will be cruel with the maids- I will cut off
+
+their heads.
+
+Greg. The heads of the maids?
+
+Samp. Ay, the heads of the maids, or their maidenheads.
+
+Take it in what sense thou wilt.
+
+Greg. They must take it in sense that feel it.
+
+Samp. Me they shall feel while I am able to stand; and 'tis known I
+
+am a pretty piece of flesh.
+
+Greg. 'Tis well thou art not fish; if thou hadst, thou hadst been
+
+Poor John. Draw thy tool - Here comes two of the house of
+
+Montagues.
+
+
+
+Enter ABRAM and BALTHASAR, two SERVINGMEN of the MONTAGUES.
+
+
+
+Samp. My naked weapon is out. Quarrel! I will back thee.
+
+Greg. How? turn thy back and run?
+
+Samp. Fear me not.
+
+Greg. No, marry. I fear thee!
+
+Samp. Let us take the law of our sides; let them begin.
+
+Greg. I will frown as I pass by, and let them take it as they list.
+
+Samp. Nay, as they dare. I will bite my thumb at them; which is
+
+disgrace to them, if they bear it.
+
+Abram. Do you bite your thumb at us, sir?
+
+Samp. I do bite my thumb, sir.
+
+Abram. Do you bite your thumb at us, sir?
+
+Samp. [aside to GREGORY] Is the law of our side if I say ay?
+
+Greg. [aside to SAMSON] No.
+
+Samp. No, sir, I do not bite my thumb at you, sir; but I bite my
+
+thumb, sir.
+
+Greg. Do you quarrel, sir?
+
+Abram. Quarrel, sir? No, sir.
+
+Samp. If you do, sir, am for you. I serve as good a man as you.
+
+Abram. No better.
+
+Samp. Well, sir.
+
+Greg. [aside to SAMPSON] Say 'better.' Here comes one of my
+
+master's kinsmen.
+
+Samp. Yes, better, sir.
+
+Abr. You lie.
+
+Samp. Draw, if you be men. Gregory, remember thy swashing blow.
+
+[They fight.]
+
+
+
+Enter BENVOLIO.
+
+
+
+Ben. Part, fools! [Beats down their swords.]
+
+Put up your swords. You know not what you do.
+
+
+
+Enter TYBALT.
+
+
+
+Tyb. What, art thou drawn among these heartless hinds?
+
+Turn thee Benvolio! look upon thy death.
+
+Ben. I do but keep the peace. Put up thy sword,
+
+Or manage it to part these men with me.
+
+Tyb. What, drawn, and talk of peace? I hate the word
+
+As I hate hell, all Montagues, and thee.
+
+Have at thee, coward!
+
+[They fight.]
+
+
+
+Enter several of both houses, who join yhe fray;
+
+then enter three or four CITIZENS with clubs.
+
+
+
+ Citizens. Clubs, bills, and partisans! Strike! beat them down!
+
+ Down with the Capulets! Down with the Montagues!
+
+
+
+Enter old CAPULET in his gown, and LADY CAPULET.
+
+
+
+Cap. What noise is this? Give me my long sword, ho!
+
+Lady Cap. A crutch, a crutch! Why call you for a sword?
+
+Cap. My sword, I say! Old Montague is come
+
+And flourishes his blade in spite of me.
+
+
+
+Enter old MONTAGUE and LADY MONTAGUE.
+
+
+
+Mont. Thou villain Capulet!- Hold me not, let me go.
+
+Lady Mont. Thou shalt not stir one foot to seek a foe.
+
+
+
+Enter Prince ESCALUS with his TRAIN.
+
+
+
+Prince. Rebellious subjects, enemies to peace,
+
+Profaners of this neighbour-stained steel-
+
+Will they not hear? What, ho! you men, you beasts,
+
+That quench the fire of your pernicious rage
+
+With purple fountains issuing from your veins!
+
+On pain of torture, from those bloody hands
+
+Throw your mistempered weapons to the ground
+
+And hear the sentence of your moved prince.
+
+Three civil brawls, bred of an airy word
+
+By thee, old Capulet, and Montague,
+
+Have thrice disturb'd the quiet of our streets
+
+And made Verona's ancient citizens
+
+Cast by their grave beseeming ornaments
+
+To wield old partisans, in hands as old,
+
+Cank'red with peace, to part your cank'red hate.
+
+If ever you disturb our streets again,
+
+Your lives shall pay the forfeit of the peace.
+
+For this time all the rest depart away.
+
+You, Capulet, shall go along with me;
+
+And, Montague, come you this afternoon,
+
+To know our farther pleasure in this case,
+
+To old Freetown, our common judgment place.
+
+Once more, on pain of death, all men depart.
+
+
+
+[Exeunt all but MONTAGUE, LADY MONTAGUE and BENVOLIO].
+
+
+
+Mont. Who set this ancient quarrel new abroach?
+
+Speak, nephew, were you by when it began?
+
+Ben. Here were the servants of your adversary
+
+And yours, close fighting ere I did approach.
+
+I drew to part them. In the instant came
+
+The fiery Tybalt, with his sword prepar'd;
+
+Which, as he breath'd defiance to my ears,
+
+He swung about his head and cut the winds,
+
+Who, nothing hurt withal, hiss'd him in scorn.
+
+While we were interchanging thrusts and blows,
+
+Came more and more, and fought on part and part,
+
+Till the Prince came, who parted either part.
+
+Lady Mont. O, where is Romeo? Saw you him to-day?
+
+Right glad I am he was not at this fray.
+
+Ben. Madam, an hour before the worshipp'd sun
+
+Peer'd forth the golden window of the East,
+
+A troubled mind drave me to walk abroad;
+
+Where, underneath the grove of sycamore
+
+That westward rooteth from the city's side,
+
+So early walking did I see your son.
+
+Towards him I made; but he was ware of me
+
+And stole into the covert of the wood.
+
+I- measuring his affections by my own,
+
+Which then most sought where most might not be found,
+
+Being one too many by my weary self-
+
+Pursu'd my humour, not Pursuing his,
+
+And gladly shunn'd who gladly fled from me.
+
+Mont. Many a morning hath he there been seen,
+
+With tears augmenting the fresh morning's dew,
+
+Adding to clouds more clouds with his deep sighs;
+
+But all so soon as the all-cheering sun
+
+Should in the farthest East bean to draw
+
+The shady curtains from Aurora's bed,
+
+Away from light steals home my heavy son
+
+And private in his chamber pens himself,
+
+Shuts up his windows, locks fair daylight
+
+And makes himself an artificial night.
+
+Black and portentous must this humour prove
+
+Unless good counsel may the cause remove.
+
+Ben. My noble uncle, do you know the cause?
+
+Mont. I neither know it nor can learn of him
+
+Ben. Have you importun'd him by any means?
+
+Mont. Both by myself and many other friend;
+
+But he, his own affections' counsellor,
+
+Is to himself- I will not say how true-
+
+But to himself so secret and so close,
+
+So far from sounding and discovery,
+
+As is the bud bit with an envious worm
+
+Ere he can spread his sweet leaves to the air
+
+Or dedicate his beauty to the sun.
+
+Could we but learn from whence his sorrows grow,
+
+We would as willingly give cure as know.
+
+
+
+Enter ROMEO.
+
+
+
+Ben. See, where he comes. So please you step aside,
+
+I'll know his grievance, or be much denied.
+
+Mont. I would thou wert so happy by thy stay
+
+To hear true shrift. Come, madam, let's away.
+
+
+
+[Exeunt MONTAGUE and LADY MONTAGUE].
+
+
+
+Ben. Good morrow, cousin.
+
+Romeo. Is the day so young?
+
+Ben. But new struck nine.
+
+Romeo. Ay me! sad hours seem long.
+
+Was that my father that went hence so fast?
+
+Ben. It was. What sadness lengthens Romeo's hours?
+
+Romeo. Not having that which having makes them short.
+
+Ben. In love?
+
+Romeo. Out-
+
+Ben. Of love?
+
+Romeo. Out of her favour where I am in love.
+
+Ben. Alas that love, so gentle in his view,
+
+Should be so tyrannous and rough in proof!
+
+Romeo. Alas that love, whose view is muffled still,
+
+Should without eyes see pathways to his will!
+
+Where shall we dine? O me! What fray was here?
+
+Yet tell me not, for I have heard it all.
+
+Here's much to do with hate, but more with love.
+
+Why then, O brawling love! O loving hate!
+
+O anything, of nothing first create!
+
+O heavy lightness! serious vanity!
+
+Misshapen chaos of well-seeming forms!
+
+Feather of lead, bright smoke, cold fire, sick health!
+
+Still-waking sleep, that is not what it is
+
+This love feel I, that feel no love in this.
+
+Dost thou not laugh?
+
+Ben. No, coz, I rather weep.
+
+Romeo. Good heart, at what?
+
+Ben. At thy good heart's oppression.
+
+Romeo. Why, such is love's transgression.
+
+Griefs of mine own lie heavy in my breast,
+
+Which thou wilt propagate, to have it prest
+
+With more of thine. This love that thou hast shown
+
+Doth add more grief to too much of mine own.
+
+Love is a smoke rais'd with the fume of sighs;
+
+Being purg'd, a fire sparkling in lovers' eyes;
+
+Being vex'd, a sea nourish'd with lovers' tears.
+
+What is it else? A madness most discreet,
+
+A choking gall, and a preserving sweet.
+
+Farewell, my coz.
+
+Ben. Soft! I will go along.
+
+An if you leave me so, you do me wrong.
+
+Romeo. Tut! I have lost myself; I am not here:
+
+This is not Romeo, he's some other where.
+
+Ben. Tell me in sadness, who is that you love?
+
+Romeo. What, shall I groan and tell thee?
+
+Ben. Groan? Why, no;
+
+But sadly tell me who.
+
+Romeo. Bid a sick man in sadness make his will.
+
+Ah, word ill urg'd to one that is so ill!
+
+In sadness, cousin, I do love a woman.
+
+Ben. I aim'd so near when I suppos'd you lov'd.
+
+Romeo. A right good markman! And she's fair I love.
+
+Ben. A right fair mark, fair coz, is soonest hit.
+
+Romeo. Well, in that hit you miss. She'll not be hit
+
+With Cupid's arrow. She hath Dian's wit,
+
+And, in strong proof of chastity well arm'd,
+
+From Love's weak childish bow she lives unharm'd.
+
+She will not stay the siege of loving terms,
+
+Nor bide th' encounter of assailing eyes,
+
+Nor ope her lap to saint-seducing gold.
+
+O, she's rich in beauty; only poor
+
+That, when she dies, with beauty dies her store.
+
+Ben. Then she hath sworn that she will still live chaste?
+
+Romeo. She hath, and in that sparing makes huge waste;
+
+For beauty, starv'd with her severity,
+
+Cuts beauty off from all posterity.
+
+She is too fair, too wise, wisely too fair,
+
+To merit bliss by making me despair.
+
+She hath forsworn to love, and in that vow
+
+Do I live dead that live to tell it now.
+
+Ben. Be rul'd by me: forget to think of her.
+
+Romeo. O, teach me how I should forget to think!
+
+Ben. By giving liberty unto thine eyes.
+
+Examine other beauties.
+
+Romeo. 'Tis the way
+
+To call hers (exquisite) in question more.
+
+These happy mask
