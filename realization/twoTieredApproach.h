@@ -23,7 +23,7 @@ public:
         }
     }
 
-    void hashing(vector<pair<T, D>> &data) {
+    bool hashing(vector<pair<T, D>> &data) {
 
         hashFunction.generateHashingFunction();
         hashTable.clear();
@@ -38,11 +38,11 @@ public:
         for (int i = 0; i < firstStep.size(); i++) {
             hashTable.push_back(IdealHashing<T, D, H>(firstStep[i]));
             if (!hashTable.back().success) {
-                success = false;
-                return;
+                return false;
             }
         }
 
+        return true;
     }
 
     bool exist(T item) {

@@ -7,7 +7,7 @@ class HashFunction {
 public:
     void generateHashingFunction();
 
-    int hashing(T);
+    long long hashing(T);
 };
 
 // universal hashFunctions
@@ -15,11 +15,11 @@ public:
 template<typename T>
 class HashFunctionType1 : public HashFunction<T> {
 public:
-    int a, b, p, n;
+    long long a, b, p, n;
 
     explicit HashFunctionType1() {}
 
-    explicit HashFunctionType1(int n) {
+    explicit HashFunctionType1(long long n) {
         this->n = n;
         generateHashingFunction();
     }
@@ -30,19 +30,15 @@ public:
         b = generateInteger(0, p - 1);
     }
 
-    static int multiply(int a, int b, int p) {
-        return 100 * (b * a/100) % p + a % 100 * b;
+    long long hashing(long long item) {
+        return ((a * item + b) % p) % n;
     }
 
-    int hashing(int item) {
-        return ((multiply(a, item, p) + b) % p) % n;
-    }
-
-    int hashing(string item) {
-        int hash = 5381;
+    long long hashing(string item) {
+        long long hash = 5381;
         for (auto i : item) {
-            int g = (int) i + 300;
-            hash = (multiply(hash, a, p) + g + p) % p;
+            long long g = (long long) i + 300;
+            hash = (hash * a + g) % p;
         }
         return hash % n;
     }
@@ -53,37 +49,37 @@ public:
 template<typename T>
 class HashFunctionType2 : public HashFunction<T> {
 public:
-    vector<int> table;
-    int n;
+    vector<long long> table;
+    long long n;
 
     HashFunctionType2() {}
 
-    explicit HashFunctionType2(int n) {
+    explicit HashFunctionType2(long long n) {
         this->n = n;
         generateHashingFunction();
     }
 
     void generateHashingFunction() {
         table.clear();
-        for (int i = 0; i < 1000; i++) {
+        for (long long i = 0; i < 1000; i++) {
             table.push_back(generateInteger(0, inf));
         }
     }
 
     int hashing(string item) {
         auto hash = 0;
-        int num = 0;
+        long long num = 0;
         for (auto i : item) {
-            int g = (int) i + 300;
+            long long g = (long long) i + 300;
             hash = (hash + g * table[num]) % n;
             num += 1;
         }
         return hash;
     }
 
-    int hashing(int item) {
+    int hashing(long long item) {
         auto hash = 0;
-        int num = 0;
+        long long num = 0;
         while (item) {
             hash = (hash + (item % 2) * table[num]) % n;
             item /= 2;
@@ -97,12 +93,12 @@ public:
 template<typename T>
 class HashFunctionType3 : public HashFunction<T> {
 public:
-    vector<vector<int>> table;
-    int n;
+    vector<vector<long long>> table;
+    long long n;
 
     HashFunctionType3() {}
 
-    explicit HashFunctionType3(int n) {
+    explicit HashFunctionType3(long long n) {
         this->n = n;
         generateHashingFunction();
     }
@@ -119,7 +115,7 @@ public:
 
     int hashing(string item) {
         auto hash = 0;
-        int num = 0;
+        long long num = 0;
         for (auto i : item) {
             hash = (hash + table[num][i]) % n;
             num += 1;
@@ -127,9 +123,9 @@ public:
         return hash;
     }
 
-    int hashing(int item) {
+    int hashing(long long item) {
         auto hash = 0;
-        int num = 0;
+        long long num = 0;
         while (item) {
             hash = (hash + table[(item % 2)][num]) % n;
             item /= 2;

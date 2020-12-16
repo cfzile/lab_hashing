@@ -10,14 +10,14 @@ public:
     vector<int> hashTableUsed;
     H hashFunction;
     int attempts = 0, limit = 200, hashTableSize;
-    int t = 0;
+    int t = 1;
     bool success = true;
 
     IdealHashing(vector<pair<T, D>> data, int p = 1) {
         hashTableSize = p * (int)data.size() * (int)data.size();
         hashFunction = H(hashTableSize);
         hashTable = vector<D>(hashTableSize);
-        hashTableUsed = vector<int>(hashTableUsed);
+        hashTableUsed = vector<int>(hashTableSize);
         while (!hashing(data)) {
             attempts += 1;
             if (attempts > limit) {

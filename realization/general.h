@@ -4,14 +4,11 @@
 #include <sys/resource.h>
 #include <unistd.h>
 
-#define int long long
-#define double long double
-
-int inf = 20000000;
+long long inf = 20000000;
 
 using namespace std;
 
-vector<int> primes = {4294967295, 587617, 96873151, 49782769, 25556317, 32287093, 84180703, 29502881, 60573089, 41091107, 19289551,
+vector<long long> primes = {2147483647, 587617, 96873151, 49782769, 25556317, 32287093, 84180703, 29502881, 60573089, 41091107, 19289551,
                       6114391, 9899173, 41257409, 5331379, 23706707, 98863543, 5092069, 74843921, 24824197, 52168027, 437321,
                       96505763, 264959, 5917883, 900917, 22072411, 22146139, 848921, 3848017, 297533, 862819, 28036597};
 
@@ -168,9 +165,9 @@ result hashing(vector<pair<T, D>> &v, int p = 1) {
 }
 
 template<typename T, typename C>
-void measure(vector<pair<T, int>> (*generateFunction)(long long),
+void measure(vector<pair<T, int>> (*generateFunction)(int),
              ofstream &out,
-             vector<int> sizes = {50, 100, 500, 1000, 2000}) {
+             vector<int> sizes = {50, 100, 500, 1000, 2000, 3000, 5000}) {
 
     int attemptsNum = 5;
 
