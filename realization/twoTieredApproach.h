@@ -1,4 +1,5 @@
 #pragma once
+
 #include "idealHashing.h"
 
 template<typename T, typename D, typename H>
@@ -8,21 +9,28 @@ public:
     H hashFunction;
     bool success = true;
     int hashTableSize;
+    int attempts = 0, limit = 10;
 
     TwoTieredApproach(vector<pair<T, D>> data, int p = 1) {
         this->hashTableSize = p * data.size();
         hashFunction = H(hashTableSize);
-        hashing(data);
+        while (!hashing(data)) {
+            attempts += 1;
+            if (attempts > limit) {
+                success = false;
+                break;
+            }
+        }
     }
 
-    void hashing(vector<pair<T, D>> & data) {
+    void hashing(vector<pair<T, D>> &data) {
 
         hashFunction.generateHashingFunction();
         hashTable.clear();
 
         vector<vector<pair<T, D>>> firstStep(hashTableSize);
 
-        for (auto item : data){
+        for (auto item : data) {
             auto itemHash = hashFunction.hashing(item.first);
             firstStep[itemHash].push_back(item);
         }

@@ -1,10 +1,12 @@
 #pragma once
+
 #include "general.h"
 
 template<typename T>
 class HashFunction {
 public:
     void generateHashingFunction();
+
     int hashing(T);
 };
 
@@ -22,23 +24,25 @@ public:
         generateHashingFunction();
     }
 
-    void generateHashingFunction(){
+    void generateHashingFunction() {
         p = primes[generateInteger(0, primes.size() - 1)];
         a = generateInteger(1, p - 1);
         b = generateInteger(0, p - 1);
     }
 
+    static int multiply(int a, int b, int p) {
+        return 100 * (b * a/100) % p + a % 100 * b;
+    }
+
     int hashing(int item) {
-        return ((a * (hash<T>{}(item) % p) + b) % p) % n;
+        return ((multiply(a, item, p) + b) % p) % n;
     }
 
     int hashing(string item) {
         int hash = 5381;
-        int num = 0;
         for (auto i : item) {
-            int g = max(0ll, (int)i);
-            hash = (hash * a + g) % p;
-            num += 1;
+            int g = (int) i;
+            hash = (multiply(hash, a, p) + g + p) % p;
         }
         return hash % n;
     }
@@ -52,7 +56,7 @@ public:
     vector<int> table;
     int n;
 
-    HashFunctionType2(){}
+    HashFunctionType2() {}
 
     explicit HashFunctionType2(int n) {
         this->n = n;
@@ -61,7 +65,7 @@ public:
 
     void generateHashingFunction() {
         table.clear();
-        for (int i = 0; i < 1000; i++){
+        for (int i = 0; i < 1000; i++) {
             table.push_back(generateInteger(0, inf));
         }
     }
@@ -96,16 +100,16 @@ public:
     vector<vector<int>> table;
     int n;
 
-    HashFunctionType3(){}
+    HashFunctionType3() {}
 
     explicit HashFunctionType3(int n) {
         this->n = n;
         generateHashingFunction();
     }
 
-    void generateHashingFunction(){
+    void generateHashingFunction() {
         table.clear();
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++) {
             table.emplace_back();
             for (int j = 0; j < 500; j++) {
                 table[i].push_back(generateInteger(0, n));

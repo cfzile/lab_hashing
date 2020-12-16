@@ -1,4 +1,5 @@
 #pragma once
+
 #include "general.h"
 #include "hashFunctions.h"
 
@@ -18,14 +19,14 @@ public:
         f2 = H(g_size);
         while (!hashing(data)) {
             attempts += 1;
-            if (attempts > limits){
+            if (attempts > limits) {
                 success = false;
                 break;
             }
         }
     }
 
-    bool hashing(vector<pair<T, D>> & data) {
+    bool hashing(vector<pair<T, D>> &data) {
 
         g.resize(g_size);
 
@@ -43,8 +44,8 @@ public:
         for (auto item : data) {
             auto hashF1 = f1.hashing(item.first);
             auto hashF2 = f2.hashing(item.first);
-            edges[hashF1].push_back({ hashF2, num });
-            edges[hashF2].push_back({ hashF1, num });
+            edges[hashF1].push_back({hashF2, num});
+            edges[hashF2].push_back({hashF1, num});
             num += 1;
         }
 
@@ -53,7 +54,7 @@ public:
         bool successfulHashing = true;
         for (int i = 0; i < g_size; i++) {
             if (was[i] == 0) {
-                successfulHashing = successfulHashing && findHValues(i, -1, was);
+                successfulHashing = successfulHashing && findGValues(i, -1, was);
                 if (!successfulHashing)
                     return false;
             }
@@ -66,7 +67,7 @@ public:
         return successfulHashing;
     }
 
-    bool findHValues(int x, int p, vector<int> & was) {
+    bool findGValues(int x, int p, vector<int> &was) {
         was[x] = 1;
         bool ans = true;
         for (auto item : edges[x]) {
@@ -78,7 +79,7 @@ public:
             if (was[i] != 0 || i == x) {
                 return false;
             } else {
-                ans = ans && findHValues(i, x, was);
+                ans = ans && findGValues(i, x, was);
             }
         }
         was[x] = 2;

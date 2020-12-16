@@ -2,6 +2,15 @@
 
 signed main() {
 
+    // стресс тестирование (в stdout появятся записи вида Failed for p={} size={})
+
+    ofstream testing;
+    vector<int> test =  {50, 1000, 5000, 10000, 50000, 100000};
+    measure<int, TwoTieredApproach<int, int, HashFunctionType1<int>>>(generateVectorInt, testing, test);
+    measure<string, TwoTieredApproach<string, int, HashFunctionType1<string>>>(generateVectorString, testing, test);
+
+    //
+
     ofstream intOut("../results/twoTieredApproach/int.out");
 
     measure<int, TwoTieredApproach<int, int, HashFunctionType1<int>>>(generateVectorInt, intOut);

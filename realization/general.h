@@ -7,11 +7,13 @@
 #define int long long
 #define double long double
 
-int inf = 2000000000;
+int inf = 20000000;
 
 using namespace std;
 
-vector<int> primes = {587617,96873151,49782769,25556317,32287093,84180703,29502881,60573089,41091107,19289551,28036597};
+vector<int> primes = {4294967295, 587617, 96873151, 49782769, 25556317, 32287093, 84180703, 29502881, 60573089, 41091107, 19289551,
+
+                      28036597};
 random_device rd;
 mt19937 mt(rd());
 
@@ -47,21 +49,20 @@ vector<pair<string, int>> generateVectorString(int size) {
     for (int i = 0; i < size; i++) {
         string str = "";
         do {
-            int string_size = generateInteger(0, 20) + 1;
+            int string_size = generateInteger(0, 15) + 1;
             str = "";
             for (int j = 0; j < string_size; j++) {
                 str += (char) generateInteger(65, 127);
             }
-        }while(keys.find(str) != keys.end());
+        } while (keys.find(str) != keys.end());
         result.emplace_back(str, generateInteger(0, inf));
         keys.insert(str);
     }
     return result;
 }
 
-void process_mem_usage(double& vm_usage, double& resident_set)
-{
-    vm_usage     = 0.0;
+void process_mem_usage(double &vm_usage, double &resident_set) {
+    vm_usage = 0.0;
     resident_set = 0.0;
 
     // the two fields we want
@@ -76,22 +77,23 @@ void process_mem_usage(double& vm_usage, double& resident_set)
     }
 
     long page_size_kb = sysconf(_SC_PAGE_SIZE) / 1024; // in case x86-64 is configured to use 2MB pages
-    vm_usage = vsize / 1024.0;
+    vm_usage = vsize / 1024.; // Mбайт
     resident_set = rss * page_size_kb;
 }
 
-struct result{
+struct result {
     bool processedSuccessful;
     double hashingTime;
     double averageSearchTime;
     double processedMemory;
+    double numAttempts;
 };
 
 double getDiff(chrono::_V2::system_clock::time_point time) {
-    return (double)chrono::duration_cast<std::chrono::microseconds>(chrono::system_clock::now() - time).count();
+    return (double) chrono::duration_cast<std::chrono::microseconds>(chrono::system_clock::now() - time).count();
 }
 
-template <typename T, typename D, typename C>
+template<typename T, typename D, typename C>
 result hashing(vector<pair<T, D>> &v, int p = 1) {
     double vm, rss;
     process_mem_usage(vm, rss);
@@ -116,25 +118,26 @@ result hashing(vector<pair<T, D>> &v, int p = 1) {
             }
         }
     }
-    double averageSearchTime = getDiff(averageSearchTimeBegin)/v.size();
+    double averageSearchTime = getDiff(averageSearchTimeBegin) / v.size();
 
-    return result{processedSuccessful, hashingTime, averageSearchTime, processedMemory};
+    return result{processedSuccessful, hashingTime, averageSearchTime, processedMemory, idealHashing->attempts + 1};
 }
 
 template<typename T, typename C>
 void measure(vector<pair<T, int>> (*generateFunction)(long long),
-             ofstream & out,
-             vector<int> sizes = {100, 500, 1000, 2000, 5000, 8000, 10000}) {
+             ofstream &out,
+             vector<int> sizes = {50, 100, 500, 1000, 2000}) {
 
     int attemptsNum = 5;
 
-    out << "p;size;hashing time;average search time;processed memory\n";
+    out << "p;size;hashing time;average search time;processed memory;number attempts\n";
 
     for (int p = 1; p <= 4; p += 1) {
         for (auto size : sizes) {
             double hashingTime = 0;
             double averageSearchTime = 0;
             double processedMemory = 0;
+            double averageAttemptsNum = 0;
             bool processedSuccessful = true;
 
             vector<pair<T, int>> v = generateFunction(size);
@@ -144,14 +147,16 @@ void measure(vector<pair<T, int>> (*generateFunction)(long long),
                 averageSearchTime += res.averageSearchTime;
                 processedMemory += res.processedMemory;
                 processedSuccessful = processedSuccessful && res.processedSuccessful;
+                averageAttemptsNum += res.numAttempts;
             }
             hashingTime /= attemptsNum;
             averageSearchTime /= attemptsNum;
             processedMemory /= attemptsNum;
+            averageAttemptsNum /= attemptsNum;
 
             if (processedSuccessful) {
                 out << p << ";" << size << ";" << hashingTime << ";"
-                    << averageSearchTime << ";" << processedMemory << ";\n";
+                    << averageSearchTime << ";" << processedMemory << ";" << averageAttemptsNum << "\n";
             } else {
                 cout << "Failed for p=" << p << " size=" << size << "\n";
             }

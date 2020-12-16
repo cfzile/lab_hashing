@@ -2,17 +2,26 @@
 
 signed main() {
 
-    ofstream intOut("../results/graphHashing/int.out");
+    // стресс тестирование (в stdout появятся записи вида Failed for p={} size={})
 
-    measure<int, GraphHashing<int, int, HashFunctionType1<int>>>(generateVectorInt, intOut);
+    ofstream testing;
+    vector<int> test =  {50, 1000, 5000, 10000, 50000, 100000};
+    measure<int, GraphHashing<int, int, HashFunctionType1<int>>>(generateVectorInt, testing, test);
+    measure<string, GraphHashing<string, int, HashFunctionType1<string>>>(generateVectorString, testing, test);
 
-    intOut.close();
+    // для графиков
 
-    ofstream stringOut("../results/graphHashing/string.out");
-
-    measure<string, GraphHashing<string, int, HashFunctionType1<string>>>(generateVectorString, stringOut);
-
-    stringOut.close();
+//    ofstream intOut("../results/graphHashing/int.out");
+//
+//    measure<int, GraphHashing<int, int, HashFunctionType2<int>>>(generateVectorInt, intOut);
+//
+//    intOut.close();
+//
+//    ofstream stringOut("../results/graphHashing/string.out");
+//
+//    measure<string, GraphHashing<string, int, HashFunctionType2<string>>>(generateVectorString, stringOut);
+//
+//    stringOut.close();
 
     return 0;
 }
