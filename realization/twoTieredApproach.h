@@ -9,9 +9,9 @@ public:
     H hashFunction;
     bool success = true;
     int hashTableSize;
-    int attempts = 0, limit = 10;
+    int attempts = 0, limit = 100;
 
-    TwoTieredApproach(vector<pair<T, D>> data, int p = 1) {
+    TwoTieredApproach(vector<pair<T, D>> data, int p = 3) {
         this->hashTableSize = p * data.size();
         hashFunction = H(hashTableSize);
         while (!hashing(data)) {
