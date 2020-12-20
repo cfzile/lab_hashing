@@ -9,7 +9,7 @@ public:
     H hashFunction;
     bool success = true;
     int hashTableSize;
-    int attempts = 1, p = 1;
+    int attempts = 1, p;
 
     TwoTieredApproach(vector<pair<T, D>> data, int p = 1) {
         this->hashTableSize = data.size();
@@ -20,9 +20,6 @@ public:
 
     bool hashing(vector<pair<T, D>> &data) {
 
-        hashFunction.generateHashingFunction();
-        hashTable.clear();
-
         vector<vector<pair<T, D>>> firstStep(hashTableSize);
 
         int collisions = 0;
@@ -30,10 +27,18 @@ public:
 
         do {
             collisions = 0;
+
+            hashFunction.generateHashingFunction();
+
+            for (auto & i : firstStep) {
+                i.clear();
+            }
+
             for (auto item : data) {
                 auto itemHash = hashFunction.hashing(item.first);
                 firstStep[itemHash].push_back(item);
             }
+
             for (int i = 0; i < firstStep.size(); i++) {
                 int size = firstStep[i].size();
                 collisions += size * size;
