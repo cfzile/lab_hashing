@@ -9,18 +9,13 @@ public:
     H hashFunction;
     bool success = true;
     int hashTableSize;
-    int attempts = 0, limit = 100;
+    int attempts = 1, p = 1;
 
-    TwoTieredApproach(vector<pair<T, D>> data, int p = 3) {
-        this->hashTableSize = p * data.size();
+    TwoTieredApproach(vector<pair<T, D>> data, int p = 1) {
+        this->hashTableSize = data.size();
+        this->p = p;
         hashFunction = H(hashTableSize);
-        while (!hashing(data)) {
-            attempts += 1;
-            if (attempts > limit) {
-                success = false;
-                break;
-            }
-        }
+        success = hashing(data);
     }
 
     bool hashing(vector<pair<T, D>> &data) {
@@ -30,9 +25,23 @@ public:
 
         vector<vector<pair<T, D>>> firstStep(hashTableSize);
 
-        for (auto item : data) {
-            auto itemHash = hashFunction.hashing(item.first);
-            firstStep[itemHash].push_back(item);
+        int collisions = 0;
+        int limit = 100;
+
+        do {
+            collisions = 0;
+            for (auto item : data) {
+                auto itemHash = hashFunction.hashing(item.first);
+                firstStep[itemHash].push_back(item);
+            }
+            for (int i = 0; i < firstStep.size(); i++) {
+                int size = firstStep[i].size();
+                collisions += size * size;
+            }
+        } while (collisions > p * data.size() && limit--);
+
+        if (limit == 0) {
+            return false;
         }
 
         for (int i = 0; i < firstStep.size(); i++) {
